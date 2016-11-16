@@ -1,9 +1,9 @@
 ﻿// site.js
 
 // Immediately Invoked Function Expression, nameless function invoked immediately.
-(function () {
+ (function () {
 
-    var ele = $("#username");
+/*    var ele = $("#username");
     ele.text("Naruto Uzimaki");
 
     //FIX THIS!
@@ -21,6 +21,24 @@
         var me = $(this);
         alert(me.text());
     });
+*/
+
+     //Wrap set of DOM elements
+     var $sidebarAndWrapper = $("#sidebar,#wrapper");
+
+     $("#sidebarToggle").on("click", function () {
+         // ToggleClass: Add a class if it doesnt exist or remove it if it does. 
+         $sidebarAndWrapper.toggleClass("hide-sidebar");
+         if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
+             //(this) = the toggle btn.
+             $(this).text("Show Sidebar");
+         } else {
+             $(this).text("Hide Sidebar");
+         }
+     });
 
 })();
+
+
+
 
